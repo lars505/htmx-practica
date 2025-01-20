@@ -18,7 +18,8 @@
                     <div id="product-out"></div>
                     <br>
                     <label for="" class="form-label">Precio</label>
-                    <input type="number" name="price" id="" class="form-control">
+                    <input type="text" name="price" id="" class="form-control" hx-get="{% url 'validate_price'%}" hx-trigger="keyup" hx-target="#validate-price">
+                    <div id="validate-price"></div>
                     <br>
                     <button class="btn btn-primary"
                     hx-post="{% url 'save_product' %}"
@@ -31,6 +32,7 @@
         </div>
 
         <div id="list-products">
+            <p id="info"></p>
             {% include 'partials/htmx_components/list_all_products.html' %}
         </div>
     </div>

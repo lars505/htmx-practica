@@ -4,6 +4,7 @@
         {% for product in products %}
             <li class="list-group-item">
                 {{ product.name }}
+                <span class=" btn btn-sm btn-danger float-end" hx-delete="{% url 'delete_product' product.id %}" hx-trigger="click" hx-target="#list-products">Eliminar</span>
             </li>
         {% endfor %}
     </ul>
